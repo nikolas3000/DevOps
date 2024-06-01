@@ -50,7 +50,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: [test_after_build]
     steps:
-      - name: Checkout code
       - uses: actions/checkout@v4
       - name: Deploy on DEV STAND
         run: .github/deploy/deploy.sh #описать деплой сш
