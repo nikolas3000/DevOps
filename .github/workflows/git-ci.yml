@@ -30,9 +30,10 @@ jobs:
         run: echo "test 3"
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [test1, test2, test3] # Зависит от выполнения всех тестов
     steps:
       - uses: actions/checkout@v4
       - name: Build
         run: .github/workflows/build.sh
+
