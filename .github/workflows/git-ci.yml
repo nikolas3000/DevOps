@@ -50,7 +50,7 @@ jobs:
         run: echo "test after build"
 
 
-  deploy on dev:
+  deploy_on_dev:
     runs-on: ubuntu-latest
     needs: [test_after_build]
     steps:
