@@ -2,9 +2,13 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - master
+      - 'release_[0-9]+(?:.[0-9]+)+$'
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - master
+      - 'release_[0-9]+(?:.[0-9]+)+$'
   workflow_dispatch:
 
 jobs:
@@ -46,7 +50,7 @@ jobs:
         run: echo "test after build"
 
 
-  deploy:
+  deploy on dev:
     runs-on: ubuntu-latest
     needs: [test_after_build]
     steps:
