@@ -39,7 +39,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build
-        run: .github/workflows/build.sh
+        run: .github/build/build.sh
 
   test_after_build:
     runs-on: ubuntu-latest
