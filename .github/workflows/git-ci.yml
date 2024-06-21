@@ -3,11 +3,11 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - master
+      - main
       - 'release_[0-9]+(?:.[0-9]+)+$'
   pull_request:
     branches:
-      - master
+      - main
       - 'release_[0-9]+(?:.[0-9]+)+$'
   workflow_dispatch:
 
