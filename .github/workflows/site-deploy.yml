@@ -1,17 +1,22 @@
-name: CI Pipeline site
+name: CI Pipeline Site
 
 on:
-
-stages:
-  - deploy
-deploy:
-  stage: deploy
-  script:
-    - cp -r ./html/* /var/www/html
-  tags:
-    - stage-shell
-  only:
-    refs:
-      - tags
+  push:
+    branches:
       - master
-      - /release.*$/
+      - 'release*'
+  pull_request:
+    branches:
+      - master
+      - 'release*'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Copy files to web server
+        run: cp -r ./html/* /var/www/html
