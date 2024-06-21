@@ -1,11 +1,13 @@
 stages:
   - deploy
 deploy:
-  - stage: deploy
-  - script:
+  stage: deploy
+  script:
     - cp -r ./html/* /var/www/html
-  - tags:
+  tags:
     - stage-shell
-  - only:
-    - refs:
+  only:
+    refs:
+      - tags
       - master
+      - /release.*$/
