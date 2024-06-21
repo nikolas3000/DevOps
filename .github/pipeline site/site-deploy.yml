@@ -1,0 +1,11 @@
+stages:
+  - deploy
+deploy:
+  - stage: deploy
+  - script:
+    - cp -r ./html/* /var/www/html
+  - tags:
+    - stage-shell
+  - only:
+    - refs:
+      - master
