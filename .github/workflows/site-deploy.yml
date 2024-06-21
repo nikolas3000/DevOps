@@ -1,3 +1,6 @@
+name
+
+on:
 stages:
   - deploy
 deploy:
