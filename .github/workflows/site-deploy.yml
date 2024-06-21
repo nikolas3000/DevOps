@@ -1,6 +1,7 @@
-name
+name: CI Pipeline site
 
-on:
+
+
 stages:
   - deploy
 deploy:
